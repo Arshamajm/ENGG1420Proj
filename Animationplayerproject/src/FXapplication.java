@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  * @author minaawad
  *  @author George
- * 
+ * comments
  */
 public class FXapplication extends Application {
     
