@@ -8,19 +8,44 @@
  * @author minaawad
  */
 public class Effects {
-    
-    //String frames = "Frames: ";
-    
-    Effects(String frames)
-    {
-       // this.frames = frames;
+
+    private int frames;
+
+    public Effects(int frames) {
+        this.frames = frames;
     }
-    
-    public void Effects()
-    {
+
+    public int getFrames() {
+        return frames;
+    }
+
+    public void setFrames(int frames) {
+        this.frames = frames;
+    }
+
+    //Hide method
+    public void hide() {
+
+    }
+
+    //Show method
+    public void show() {
+
+    }
+
+    //Jump method
+    public void Jump() {
+
+    }
+
+    ///change colour method
+    public void ChangeColor() {
+
+    }
+
+    public void Effects() {
         //String found = frames.split(this.frames)[0];
         //if(found.contains(this.frames)){
-            
-        
+
     }
 }
