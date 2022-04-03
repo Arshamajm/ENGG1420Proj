@@ -24,12 +24,12 @@ public class Rectangle extends Shape{
         this.width = width;
     }
 
-    public void setColour(Color colour) {
-        this.colour = colour;
+    public void setColour(int r, int g, int b){
+        this.colour = new Color(r,g,b);
     }
 
-    public void setBorderColor(Color borderColor) {
-        this.borderColor = borderColor;
+    public void setBorderColor(int r, int g, int b) {
+        this.borderColor = new Color(r,g,b);
     }
 
     public void setBorderthickness(double borderthickness) {
