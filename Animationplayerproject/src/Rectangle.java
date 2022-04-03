@@ -16,6 +16,10 @@ public class Rectangle extends Shape{
     int length;
     int width;
 
+    Rectangle(int length, int width, int x, int y, int border) {
+        
+    }
+
     public void setLength(int length) {
         this.length = length;
     }

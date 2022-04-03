@@ -4,6 +4,7 @@
  */
 
 
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
@@ -22,7 +23,7 @@ public class CCircle extends Application
     public void start(Stage stage)
     {
         // Create the Circle
-        Circle circle = new Circle(10, 10, 40, Color.YELLOW);
+        Circle circle = new Circle(10, 10, 40, Color.BURLYWOOD);
         circle.setStroke(Color.BLACK);
         circle.setStrokeWidth(2.0);
  
@@ -43,14 +44,15 @@ public class CCircle extends Application
             "-fx-border-radius: 5;" +
             "-fx-border-color: blue;"
         );
- 
+         
         // Create the Scene
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 600, 600);
         // Add the Scene to the Stage
         stage.setScene(scene);
         // Set the Title of the Stage
         stage.setTitle("A JavaFX Circle Example");
         // Display the Stage
         stage.show();
+        
     }
 }

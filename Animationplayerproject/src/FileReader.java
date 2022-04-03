@@ -95,6 +95,7 @@ public class FileReader {
                         int starthide = Integer.parseInt(START2[1]); //start of circle hide
                         System.out.println("Start hide: " + starthide);
                     }
+                    Circle circle = new Circle(r, x, y, red, blue, green);
                 }
             } else {
                 System.out.println("Error in circle information");
@@ -143,7 +144,7 @@ public class FileReader {
 
                         /*
                          *add effects part
-                         *
+                         * should pass startshow and starthide in it
                          *
                          */
                     }
@@ -164,6 +165,7 @@ public class FileReader {
                         int yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
                         System.out.println("y: " + yjump);
                     }
+                    Rectangle Rect = new Rectangle(length, width, x, y, border);
                 }
             }
 
