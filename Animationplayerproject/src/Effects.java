@@ -9,18 +9,41 @@
  */
 public class Effects {
 
-    private int frames;
+    private int HideStart;
+    private int ShowStart;
+    private int Jumpstart;
+    private int Changecolor;
 
-    public Effects(int frames) {
-        this.frames = frames;
+    public int getHideStart() {
+        return HideStart;
     }
 
-    public int getFrames() {
-        return frames;
+    public void setHideStart(int HideStart) {
+        this.HideStart = HideStart;
     }
 
-    public void setFrames(int frames) {
-        this.frames = frames;
+    public int getShowStart() {
+        return ShowStart;
+    }
+
+    public void setShowStart(int ShowStart) {
+        this.ShowStart = ShowStart;
+    }
+
+    public int getJumpstart() {
+        return Jumpstart;
+    }
+
+    public void setJumpstart(int Jumpstart) {
+        this.Jumpstart = Jumpstart;
+    }
+
+    public int getChangecolor() {
+        return Changecolor;
+    }
+
+    public void setChangecolor(int Changecolor) {
+        this.Changecolor = Changecolor;
     }
 
     //Hide method
