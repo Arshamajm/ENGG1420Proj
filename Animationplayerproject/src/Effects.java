@@ -62,8 +62,9 @@ public class Effects {
     }
 
     ///change colour method
-    public void ChangeColor() {
-
+    public void ChangeColor(Shape a, int r, int g, int b) {
+        a.setColour(r, g, b);
+        
     }
 
     public void Effects() {
