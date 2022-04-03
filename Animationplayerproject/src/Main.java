@@ -8,6 +8,7 @@
  * @author Doyin
  */
 public class Main {
+    
     public static void main(String[] args) {
         AnimationPlayer player = new AnimationPlayer();
         player.loadAnimationFromFile("animation.txt");
