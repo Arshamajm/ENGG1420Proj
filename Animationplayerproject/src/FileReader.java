@@ -32,11 +32,7 @@ public class FileReader {
             int f = Integer.parseInt(frames[1]);
             System.out.println("Total frames: " + f);
 
-            //while (sc.hasNextLine()) {
-            //String data = myReader.nextLine();
-            //frames per second
             String fps = sc.nextLine();
-            //System.out.println(fps);
             String[] framespersecond = fps.split(" "); //splits string 
             int FPS = Integer.parseInt(framespersecond[1]); //converts String to number
             System.out.println("frames per second: " + FPS); //prints the number of fps

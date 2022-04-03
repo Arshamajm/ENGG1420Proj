@@ -22,7 +22,7 @@ public class ChangeColor extends Effects{
         
     }
     
-    public void ChangeColor() throws FileNotFoundException, IOException
+    public void ChangeColor(){// throws FileNotFoundException, IOException{
             
     {
         

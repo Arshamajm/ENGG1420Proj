@@ -10,8 +10,8 @@
 public class Main {
     
     public static void main(String[] args) {
-        AnimationPlayer player = new AnimationPlayer();
-        player.loadAnimationFromFile("animation.txt");
+        FileReader player = new FileReader();
+        //player.loadAnimationFromFile("shapes.txt");
         player.run();
     }
 }
