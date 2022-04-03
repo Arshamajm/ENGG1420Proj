@@ -26,6 +26,10 @@ public class Shape {
     int y = 0;
 // each shape has an origin of (0,0);
 
+    public void setColour(int r, int g, int b) {
+        this.colour = new Color(r, g,b);
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
 
         try {
