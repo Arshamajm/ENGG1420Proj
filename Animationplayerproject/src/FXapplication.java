@@ -38,8 +38,18 @@ public class FXapplication extends Application {
         m.readfile(); // reads file //
         // System.out.println(m.rectangle.get(0).length); // this was just a test to see if it works//
         
-       
-
+        System.out.println("The size of the arraylist of rectangle is: " + m.rectangle.size()); //sizes of the arraylist of rectangle
+        Rectangle[] rectt = new Rectangle[m.rectangle.size()]; //creates an array of java.rect whiich
+        
+        //System.out.println("dsjfdlkajsdlkfjalksjdf: "+ rectt.length); //size of javarect array
+        
+        for (int i = 0; i<m.rectangle.size(); i++){ //creating the rectangles in the java rectangle
+            rectt[i] = new Rectangle(m.rectangle.get(i).x, m.rectangle.get(i).y, m.rectangle.get(i).width , m.rectangle.get(i).length);
+            System.out.println("Values of rectangle "+i+"in the java rectangle array: X"+m.rectangle.get(i).x +" Y"+ m.rectangle.get(i).y +" width"+ m.rectangle.get(i).width  +" length"+ m.rectangle.get(i).length);
+        }
+        
+        
+        
         Pane root = new Pane();
 
         Rectangle rect = new Rectangle(m.rectangle.get(0).x, m.rectangle.get(0).y, m.rectangle.get(0).width , m.rectangle.get(0).length); //x,y, x-size, y-size
