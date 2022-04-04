@@ -9,7 +9,7 @@ import java.awt.Color;
 /**
  *
  * @author minaawad
- */
+ */ //bruh
 public class Line extends Shape {
     int endX, endY;
 
