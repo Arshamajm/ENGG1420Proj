@@ -161,6 +161,42 @@ public class FileReader {
                         System.out.println("y: " + yjump);
                     }
                     Rectangle Rect = new Rectangle(length, width, x, y, border);
+                } else if (object.contains("Line")) { 
+                //Each line has a starting point (including startX and startY) and an end point (including endX and endY), color, and border thickness (border).
+                    //starting x
+                    String readstartx = sc.nextLine();
+                    String[] readstartxsplit = readstartx.split(" ");
+                    int startX = Integer.parseInt(readstartxsplit[1]);
+                    System.out.println("Start jump: " + startX);
+                    //starting y
+                    String readstarty = sc.nextLine();
+                    String[] readstartysplit = readstarty.split(" ");
+                    int startY = Integer.parseInt(readstartysplit[1]);
+                    System.out.println("Start jump: " + startY);
+                    //ending x
+                    String read_end_x = sc.nextLine();
+                    String[] read_end_x_split = read_end_x.split(" ");
+                    int end_X = Integer.parseInt(read_end_x_split[1]);
+                    System.out.println("Start jump: " + end_X);
+                    //ending y
+                    String read_end_y = sc.nextLine();
+                    String[] read_end_y_split = read_end_y.split(" ");
+                    int end_y = Integer.parseInt(read_end_y_split[1]);
+                    System.out.println("Start jump: " + end_y);
+                    //colour
+                    String c = sc.nextLine();           //colors red, green, blue
+                    String COLOR1 = c.replaceAll("[^0-9]", " ");
+                    String[] COLOR2 = COLOR1.split("\\s+");
+                    int red = Integer.parseInt(COLOR2[1]);
+                    int green = Integer.parseInt(COLOR2[2]);
+                    int blue = Integer.parseInt(COLOR2[3]);
+                    System.out.println("Color: " + red + " " + green + " " + blue);
+                    //border thickness
+                    String read_border_thickness = sc.nextLine();
+                    String[] read_border_thickness_split = read_border_thickness.split(" ");
+                    int Border_Thickness = Integer.parseInt(read_border_thickness_split[1]);
+                    System.out.println("Start jump: " + Border_Thickness);
+
                 }
                 String empty = sc.nextLine();
                 if (empty.contains("")) {
