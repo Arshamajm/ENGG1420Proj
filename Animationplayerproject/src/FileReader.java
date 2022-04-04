@@ -1,6 +1,7 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -18,7 +19,13 @@ public class FileReader {
     }
 
     public static void main(String[] args) {
-
+        
+        ArrayList<Circle> circle = new ArrayList();
+        ArrayList<Rectangle> rectangle = new ArrayList();
+        ArrayList<Line> line = new ArrayList();
+        
+        
+        
         try {
             File myObj = new File("shapes.txt");
             Scanner sc = new Scanner(myObj);
@@ -96,7 +103,7 @@ public class FileReader {
                         int starthide = Integer.parseInt(START2[1]); //start of circle hide
                         System.out.println("Start hide: " + starthide);
                     }
-                    Circle circle1 = new Circle(r, x, y, red, blue, green);
+                    circle.add(new Circle(r, x, y, red, blue, green));
 
                 } else if (object.contains("Rect")) {
                     //length
@@ -160,9 +167,10 @@ public class FileReader {
                         int yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
                         System.out.println("y: " + yjump);
                     }
-                    Rectangle Rect = new Rectangle(length, width, x, y, border);
-                } else if (object.contains("Line")) { 
-                //Each line has a starting point (including startX and startY) and an end point (including endX and endY), color, and border thickness (border).
+                    //Rectangle arraylist
+                    rectangle.add(new Rectangle(length, width, x, y, border));
+                } 
+                else if (object.contains("Line")) { //Each line has a starting point (including startX and startY) and an end point (including endX and endY), color, and border thickness (border).
                     //starting x
                     String readstartx = sc.nextLine();
                     String[] readstartxsplit = readstartx.split(" ");
@@ -196,7 +204,9 @@ public class FileReader {
                     String[] read_border_thickness_split = read_border_thickness.split(" ");
                     int Border_Thickness = Integer.parseInt(read_border_thickness_split[1]);
                     System.out.println("Start jump: " + Border_Thickness);
-
+                    
+                    //ArrayList for Line, everytime there is a new line element it will add it to the arraylist
+                    line.add(new Line(startX,startY,end_X,end_y,red,green,blue,Border_Thickness));
                 }
                 String empty = sc.nextLine();
                 if (empty.contains("")) {
