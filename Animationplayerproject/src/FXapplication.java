@@ -30,7 +30,7 @@ public class FXapplication extends Application {
     public void start(Stage stage) {
 
         initUI(stage);
-    }
+    }//
 
     private void initUI(Stage stage) {
 
