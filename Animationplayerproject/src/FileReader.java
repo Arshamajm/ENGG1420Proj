@@ -36,7 +36,7 @@ public class FileReader {
      int startshow;
      int starthide;
     ArrayList<Circle> circle = new ArrayList();
-        ArrayList<Rectangle> rectangle = new ArrayList();
+        ArrayList<Rectangle_our> rectangle = new ArrayList();
         ArrayList<Line> line = new ArrayList();
         // Everything before was initialized inside the file so it could not be accessed outside of it thats why I did this//
 
@@ -193,7 +193,7 @@ public class FileReader {
                         }
                         //Rectangle arraylist
 
-                        rectangle.add(new Rectangle(length, width, x, y, border));
+                        rectangle.add(new Rectangle_our(length, width, x, y, border));
 
                     } else if (object.contains("Line")) { //Each line has a starting point (including startX and startY) and an end point (including endX and endY), color, and border thickness (border).
                         System.out.println("Line:");

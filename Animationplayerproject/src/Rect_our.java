@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
  
-public class Rect extends Application
+public class Rect_our extends Application
 {
     public static void main(String[] args)
     {

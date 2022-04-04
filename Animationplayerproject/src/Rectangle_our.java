@@ -11,12 +11,12 @@ import java.awt.Color;
  *
  * @author minaawad
  */
-public class Rectangle extends Shape{
+public class Rectangle_our extends Shape{
     
     int length;
     int width;
 
-    Rectangle(int length, int width, int x, int y, int border) {
+    public Rectangle_our(int length, int width, int x, int y, int border) {
         setLength(length);
         setWidth(width);
         setX(x);
@@ -44,7 +44,7 @@ public class Rectangle extends Shape{
         this.y = y;
     }
     
-    Rectangle()
+    public Rectangle_our()
     {
         
     }
