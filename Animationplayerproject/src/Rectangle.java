@@ -17,7 +17,11 @@ public class Rectangle extends Shape{
     int width;
 
     Rectangle(int length, int width, int x, int y, int border) {
-        
+        setLength(length);
+        setWidth(width);
+        setX(x);
+        setY(y);
+        setBorderthickness(border);
     }
 
     public void setLength(int length) {
@@ -26,14 +30,6 @@ public class Rectangle extends Shape{
 
     public void setWidth(int width) {
         this.width = width;
-    }
-
-    public void setColour(int r, int g, int b){
-        this.colour = new Color(r,g,b);
-    }
-
-    public void setBorderColor(int r, int g, int b) {
-        this.borderColor = new Color(r,g,b);
     }
 
     public void setBorderthickness(double borderthickness) {

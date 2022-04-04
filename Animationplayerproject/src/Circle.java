@@ -12,12 +12,12 @@ import java.awt.Color;
  */
 public class Circle extends Shape{
     
-    private final int r; //we might need to make variables final to use animation timer
-    private int x;
-    private int y;
-    private int red;
-    private int blue;
-    private int green;
+ int r; //we might need to make variables final to use animation timer
+ int x;
+ int y;
+ int red;
+ int blue;
+ int green;
 
     Circle(int r, int x, int y, int red, int blue, int green) {
         this.r = r;

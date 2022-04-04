@@ -36,14 +36,6 @@ public class Line extends Shape {
         this.endY = endY;
     }
 
-    public void setColour(Color colour) {
-        this.colour = colour;
-    }
-
-    public void setBorderColor(Color borderColor) {
-        this.borderColor = borderColor;
-    }
-
     public void setBorderthickness(double borderthickness) {
         this.borderthickness = borderthickness;
     }

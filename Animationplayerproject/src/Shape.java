@@ -16,16 +16,18 @@ import java.awt.Color;
  */
 public class Shape {
 
-    Color colour = new Color(255, 0, 0);
+    
 // default color is red on  rgb scale//
-    Color borderColor = new Color(0, 0, 0);
 //default border color for all shapes is black//
+    
     double borderthickness = 3.0;
 // number of pixels for border thickness//
     int x = 0;
     int y = 0;
 // each shape has an origin of (0,0);
-
+int red = 0;
+int green = 0;
+int blue = 0;
     
 }
 

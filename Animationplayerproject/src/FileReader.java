@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -14,17 +13,39 @@ import java.util.Scanner;
  * @author Doyin
  */
 public class FileReader {
+     int f;
+     int FPS;
+     int ELEMENTS;
+     int r;
+     int x;
+     int y;
+     int red;
+     int blue;
+     int green;
+     int length;
+     int width;
+     int startX;
+     int startY;
+     int end_X;
+     int border;
+     int Border_Thickness;
+     int end_y;
+     int startjump;
+     int xjump;
+     int yjump;
+     int startshow;
+     int starthide;
+    ArrayList<Circle> circle = new ArrayList();
+        ArrayList<Rectangle> rectangle = new ArrayList();
+        ArrayList<Line> line = new ArrayList();
+        // Everything before was initialized inside the file so it could not be accessed outside of it thats why I did this//
 
     public void loadAnimationFromFile(String a) {
 
-    }
+    } 
 
-    public static void main(String[] args) {
-
-        ArrayList<Circle> circle = new ArrayList();
-        ArrayList<Rectangle> rectangle = new ArrayList();
-        ArrayList<Line> line = new ArrayList();
-
+    public void readfile()  
+           {
         try {
             File myObj = new File("shapes.txt");
             Scanner sc = new Scanner(myObj);
@@ -33,16 +54,16 @@ public class FileReader {
             String numframes = sc.nextLine();
             //System.out.println(numframes);
             String[] frames = numframes.split(" ");
-            int f = Integer.parseInt(frames[1]);
+             f = Integer.parseInt(frames[1]);
             System.out.println("Total frames: " + f);
 
             String fps = sc.nextLine();
             String[] framespersecond = fps.split(" "); //splits string 
-            int FPS = Integer.parseInt(framespersecond[1]); //converts String to number
+             FPS = Integer.parseInt(framespersecond[1]); //converts String to number
             System.out.println("frames per second: " + FPS); //prints the number of fps
 
-            String elements = sc.nextLine();
-            int ELEMENTS = Integer.parseInt(elements);
+             String elements = sc.nextLine();
+             ELEMENTS = Integer.parseInt(elements);
             System.out.println("The number of elements: " + ELEMENTS);
 
             String empty = sc.nextLine();
@@ -59,25 +80,25 @@ public class FileReader {
                         //radius
                         String radius = sc.nextLine();
                         String[] RADIUS = radius.split("\\s");
-                        int r = Integer.parseInt(RADIUS[1]);  //radius
+                         r = Integer.parseInt(RADIUS[1]);  //radius
                         System.out.println("r: " + r);
                         //x-axis
                         String x_axis = sc.nextLine();
                         String[] X_AXIS = x_axis.split("\\s");
-                        int x = Integer.parseInt(X_AXIS[1]); //x-axis
+                         x = Integer.parseInt(X_AXIS[1]); //x-axis
                         System.out.println("x: " + x);
                         //y-axis
                         String y_axis = sc.nextLine();
                         String[] Y_AXIS = y_axis.split("\\s");
-                        int y = Integer.parseInt(Y_AXIS[1]); //y-axis
+                         y = Integer.parseInt(Y_AXIS[1]); //y-axis
                         System.out.println("y: " + y);
                         //reads colors
                         String c = sc.nextLine();           //colors red, green, blue
                         String COLOR1 = c.replaceAll("[^0-9]", " ");
                         String[] COLOR2 = COLOR1.split("\\s+");
-                        int red = Integer.parseInt(COLOR2[1]);
-                        int green = Integer.parseInt(COLOR2[2]);
-                        int blue = Integer.parseInt(COLOR2[3]);
+                         red = Integer.parseInt(COLOR2[1]);
+                         green = Integer.parseInt(COLOR2[2]);
+                         blue = Integer.parseInt(COLOR2[3]);
                         System.out.println("Color: " + red + " " + green + " " + blue);
                         /*
                   *add effects part
@@ -90,7 +111,7 @@ public class FileReader {
                         if (show.contains("Show")) {
                             String s = sc.nextLine();
                             String[] START = s.split(" ");
-                            int startshow = Integer.parseInt(START[1]); //start of circle show
+                            startshow = Integer.parseInt(START[1]); //start of circle show
                             System.out.println("Start show: " + startshow);
                             /*
                       *add effects part
@@ -102,7 +123,7 @@ public class FileReader {
                         if (hide.contains("Hide")) {
                             String s2 = sc.nextLine();
                             String[] START2 = s2.split(" ");
-                            int starthide = Integer.parseInt(START2[1]); //start of circle hide
+                            starthide = Integer.parseInt(START2[1]); //start of circle hide
                             System.out.println("Start hide: " + starthide);
                         }
                         circle.add(new Circle(r, x, y, red, blue, green));
@@ -112,27 +133,27 @@ public class FileReader {
                         //length
                         String l = sc.nextLine();
                         String[] LENGTH = l.split("\\s");
-                        int length = Integer.parseInt(LENGTH[1]); //length of rect
+                         length = Integer.parseInt(LENGTH[1]); //length of rect
                         System.out.println("Length: " + length);
                         //width
                         String w = sc.nextLine();
                         String[] WIDTH = w.split("\\s");
-                        int width = Integer.parseInt(WIDTH[1]);  //width of rect
+                         width = Integer.parseInt(WIDTH[1]);  //width of rect
                         System.out.println("Width: " + width);
                         //x-axis
                         String x_axis = sc.nextLine();
                         String[] X_AXIS = x_axis.split("\\s");
-                        int x = Integer.parseInt(X_AXIS[1]);     //x-axis of rect
+                         x = Integer.parseInt(X_AXIS[1]);     //x-axis of rect
                         System.out.println("x: " + x);
                         //y-axis
                         String y_axis = sc.nextLine();
                         String[] Y_AXIS = y_axis.split("\\s");
-                        int y = Integer.parseInt(Y_AXIS[1]);     //y-axis of rect
+                        y = Integer.parseInt(Y_AXIS[1]);     //y-axis of rect
                         System.out.println("y: " + y);
                         //border
                         String b = sc.nextLine();
                         String[] BORDER = b.split("\\s");
-                        int border = Integer.parseInt(BORDER[1]);//border of rect
+                        border = Integer.parseInt(BORDER[1]);//border of rect
                         System.out.println("border: " + border);
 
                         /*
@@ -144,7 +165,7 @@ public class FileReader {
                         if (show.contains("Show")) {
                             String s = sc.nextLine();
                             String[] START = s.split(" ");
-                            int startshow = Integer.parseInt(START[1]); //show of rect
+                            startshow = Integer.parseInt(START[1]); //show of rect
                             System.out.println("Start show: " + startshow);
 
                             /*
@@ -157,17 +178,17 @@ public class FileReader {
                         if (jump.contains("Jump")) {
                             String s2 = sc.nextLine();
                             String[] START2 = s2.split(" ");
-                            int startjump = Integer.parseInt(START2[1]);
+                            startjump = Integer.parseInt(START2[1]);
                             System.out.println("Start jump: " + startjump);//start of jump of rect
                             //x-axis
                             String x_ = sc.nextLine();
                             String[] X_ = x_.split("\\s");
-                            int xjump = Integer.parseInt(X_[1]);     //x-axis for jump rect
+                            xjump = Integer.parseInt(X_[1]);     //x-axis for jump rect
                             System.out.println("x: " + xjump);
                             //y-axis
                             String y_ = sc.nextLine();
                             String[] Y_ = y_.split("\\s");
-                            int yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
+                            yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
                             System.out.println("y: " + yjump);
                         }
                         //Rectangle arraylist
@@ -179,35 +200,35 @@ public class FileReader {
                         //starting x
                         String readstartx = sc.nextLine();
                         String[] readstartxsplit = readstartx.split(" ");
-                        int startX = Integer.parseInt(readstartxsplit[1]);
+                        startX = Integer.parseInt(readstartxsplit[1]);
                         System.out.println("Start jump: " + startX);
                         //starting y
                         String readstarty = sc.nextLine();
                         String[] readstartysplit = readstarty.split(" ");
-                        int startY = Integer.parseInt(readstartysplit[1]);
+                        startY = Integer.parseInt(readstartysplit[1]);
                         System.out.println("startY: " + startY);
                         //ending x
                         String read_end_x = sc.nextLine();
                         String[] read_end_x_split = read_end_x.split(" ");
-                        int end_X = Integer.parseInt(read_end_x_split[1]);
+                         end_X = Integer.parseInt(read_end_x_split[1]);
                         System.out.println("end X: " + end_X);
                         //ending y
                         String read_end_y = sc.nextLine();
                         String[] read_end_y_split = read_end_y.split(" ");
-                        int end_y = Integer.parseInt(read_end_y_split[1]);
+                        end_y = Integer.parseInt(read_end_y_split[1]);
                         System.out.println("end y: " + end_y);
                         //colour
                         String c = sc.nextLine();           //colors red, green, blue
                         String COLOR1 = c.replaceAll("[^0-9]", " ");
                         String[] COLOR2 = COLOR1.split("\\s+");
-                        int red = Integer.parseInt(COLOR2[1]);
-                        int green = Integer.parseInt(COLOR2[2]);
-                        int blue = Integer.parseInt(COLOR2[3]);
+                        red = Integer.parseInt(COLOR2[1]);
+                        green = Integer.parseInt(COLOR2[2]);
+                        blue = Integer.parseInt(COLOR2[3]);
                         System.out.println("Color: " + red + " " + green + " " + blue);
                         //border thickness
                         String read_border_thickness = sc.nextLine();
                         String[] read_border_thickness_split = read_border_thickness.split(" ");
-                        int Border_Thickness = Integer.parseInt(read_border_thickness_split[1]);
+                        Border_Thickness = Integer.parseInt(read_border_thickness_split[1]);
                         System.out.println("Border: " + Border_Thickness);
 
                         //ArrayList for Line, everytime there is a new line element it will add it to the arraylist
@@ -232,11 +253,6 @@ public class FileReader {
 
         }
         
-        //Now we must send the elements that we initialized to the FXapplication, to do this we will create an object of type FXapplication
-        FXapplication bruh = new FXapplication(circle, rectangle, line);
-        
-
-        }
     }
 
 }
