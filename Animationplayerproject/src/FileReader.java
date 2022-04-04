@@ -231,7 +231,12 @@ public class FileReader {
             System.out.println("An error occurred.");
 
         }
-        System.out.println(rectangle.get(1).length);
+        
+        //Now we must send the elements that we initialized to the FXapplication, to do this we will create an object of type FXapplication
+        FXapplication bruh = new FXapplication(circle, rectangle, line);
+        
+
+        }
     }
 
 }

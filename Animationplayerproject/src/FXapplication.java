@@ -1,6 +1,7 @@
 
 import com.sun.javafx.tk.Toolkit;
 import java.sql.Time;
+import java.util.ArrayList;
 import javax.swing.*;
 
 import javafx.animation.KeyFrame;
@@ -26,6 +27,18 @@ import javafx.animation.AnimationTimer;
 //}
 public class FXapplication extends Application {
 
+    ArrayList<Circle> circle = new ArrayList();
+    ArrayList<Rectangle> rectangle = new ArrayList();
+    ArrayList<Line> line = new ArrayList();
+
+    public FXapplication(ArrayList<Circle> Circle, ArrayList<Rectangle> rect, ArrayList<Line> line) {
+        this.circle = Circle;
+        this.rectangle = rect;
+        this.line = line;
+    }
+
+    
+    
     @Override
     public void start(Stage stage) {
 
@@ -36,13 +49,15 @@ public class FXapplication extends Application {
 
         Pane root = new Pane();
 
-        Rectangle rect = new Rectangle(20, 80, 60, 60); //x,y, x-size, y-size
+        for (Rectangle bruh : rectangle) {
+
+        }
+
+        //////////////////////////////////////////Rectangle rect = new Rectangle(20, 80, 60, 60); //x,y, x-size, y-size
         //rect.setEffect(new Lighting());
-        rect.setFill(Color.CADETBLUE);
-
-        Rectangle rect1 = new Rectangle(40, 200, 60, 60);
-        rect1.setFill(Color.LIGHTSALMON);
-
+        // rect.setFill(Color.CADETBLUE);
+        //Rectangle rect1 = new Rectangle(40, 200, 60, 60);
+        //rect1.setFill(Color.LIGHTSALMON);
         Timeline timer = new Timeline();
 
         timer.setCycleCount(4); //number of cycles
