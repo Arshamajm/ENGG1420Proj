@@ -51,7 +51,7 @@ public class FXapplication extends Application {
 
         for (Rectangle bruh : rectangle) {
 
-        }
+        }//
 
         //////////////////////////////////////////Rectangle rect = new Rectangle(20, 80, 60, 60); //x,y, x-size, y-size
         //rect.setEffect(new Lighting());
