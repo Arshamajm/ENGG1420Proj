@@ -17,8 +17,6 @@ public class FileReader {
 
     }
 
-    
-    
     public static void main(String[] args) {
 
         try {
@@ -41,11 +39,14 @@ public class FileReader {
             int ELEMENTS = Integer.parseInt(elements);
             System.out.println("The number of elements: " + ELEMENTS);
 
-            String circle = sc.nextLine();
-            if (circle.contains("")) {
+            int count = 0;
+            while (count != ELEMENTS) 
+            {
+
                 //in circle class
                 String object = sc.nextLine();
-                if (object.contains("Circle")) {        //circle
+                if (object.contains("Circle"))            //circle
+                {        
                     //radius
                     String radius = sc.nextLine();
                     String[] RADIUS = radius.split("\\s");
@@ -95,15 +96,9 @@ public class FileReader {
                         int starthide = Integer.parseInt(START2[1]); //start of circle hide
                         System.out.println("Start hide: " + starthide);
                     }
-                    Circle circle = new Circle(r, x, y, red, blue, green);
-                }
-            } else {
-                System.out.println("Error in circle information");
-            }
-            String rect = sc.nextLine();
-            if (rect.contains("")) {
-                String object2 = sc.nextLine();
-                if (object2.contains("Rect")) {
+                    Circle circle1 = new Circle(r, x, y, red, blue, green);
+
+                } else if (object.contains("Rect")) {
                     //length
                     String l = sc.nextLine();
                     String[] LENGTH = l.split("\\s");
@@ -167,18 +162,19 @@ public class FileReader {
                     }
                     Rectangle Rect = new Rectangle(length, width, x, y, border);
                 }
+                String empty = sc.nextLine();
+                if (empty.contains("")) {
+                    count += 1;
+                }
             }
+        
 
-            sc.close();
-        } catch (FileNotFoundException e) {
+        sc.close();
+        }catch (FileNotFoundException e) {
             //System.out.println("An error occurred.");
             //e.printStackTrace();
         }
 
     }
-
-    public void run() {
-    }
-
 
 }
