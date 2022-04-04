@@ -9,10 +9,25 @@ import java.awt.Color;
 /**
  *
  * @author minaawad
- */
+ */ //bruhf
 public class Line extends Shape {
-    int endX, endY;
+   int startX, startY, endX, endY, Border_Thickness, Red, Green, Blue ;
 
+    //constructor for line
+
+    public Line(int startX, int startY, int endX, int endY, int Red, int Green, int Blue, int Border_Thickness) {
+        this.startX = startX;
+        this.startY = startY;
+        this.endX = endX;
+        this.endY = endY;
+        this.Border_Thickness = Border_Thickness;
+        this.Red = Red;
+        this.Green = Green;
+        this.Blue = Blue;
+    }
+
+    
+    
     public void setEndX(int endX) {
         this.endX = endX;
     }

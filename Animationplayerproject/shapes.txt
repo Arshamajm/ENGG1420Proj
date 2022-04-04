@@ -12,6 +12,16 @@ Start: 10
 Hide
 Hide: 120
 
+Circle
+r: 10
+x: 20
+y: 20
+color: 255, 0, 0
+Show
+Start: 10
+Hide
+Hide: 120
+
 Rect
 Length: 100
 Width: 50
