@@ -1,6 +1,6 @@
 frames: 1000
 speed: 10 fps
-2
+4
 
 Circle
 r: 10
@@ -24,3 +24,24 @@ Jump
 Start: 50
 X: 30
 Y: 30
+
+Rect
+Length: 50
+Width: 100
+x: 50
+Y: 50
+Border: 3
+Show
+Start: 15
+Jump
+Start: 50
+X: 30
+Y: 30
+
+Line
+Sx: 10
+Sy: 10
+Ex: 300
+Ey: 10
+Color: 0, 0, 0
+Border: 5
