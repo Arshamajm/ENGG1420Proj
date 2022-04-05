@@ -46,7 +46,7 @@ public class FXapplication extends Application {
         root = new Pane();
         Timeline timer = new Timeline();
         // makes new filereader class//
-        m.readfile("shapes.txt"); // reads file //
+        m.readfile("input.txt"); // reads file //
 
         ///Creating Java Rectangle Array
         System.out.println("The size of the arraylist of rectangle is: " + m.rectangle.size()); //sizes of the arraylist of rectangle
@@ -75,16 +75,6 @@ public class FXapplication extends Application {
         r = new Rectangle(40, 200, 60, 60);
         r.setFill(Color.LIGHTSALMON);
 
-//       timer.setCycleCount(4); //number of cycles
-//       timer.setAutoReverse(true);
-//            KeyValue kv = new KeyValue(rectt[0].translateXProperty(), 200);
-//            KeyValue kh = new KeyValue(rectt[0].translateYProperty(), -40);
-//           KeyFrame kfx = new KeyFrame(Duration.millis(1000), kv);
-//            KeyFrame kfy = new KeyFrame(Duration.millis(1000), kh);
-//           timer.getKeyFrames().addAll(kfx, kfy);
-        //root.getChildren().add(rectt[0]);
-        //root.getChildren().add(r);
-//            timer.play();
         MyTimer t = new MyTimer();
         t.start();
 
