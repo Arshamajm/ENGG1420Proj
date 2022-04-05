@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,6 +5,14 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
+/**
+ *
+ * @author Odoyinda
+ * @author Ggorgi
+ * @author Mawad
+ * @author Aajamiba
+ */
  
 public class Rect_our extends Application
 {
@@ -41,4 +45,6 @@ public class Rect_our extends Application
         // Display the Stage
         stage.show();
     }
+
+
 }

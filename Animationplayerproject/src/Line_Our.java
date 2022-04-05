@@ -1,15 +1,13 @@
 
 import java.awt.Color;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 /**
  *
- * @author minaawad
- */ //bruhf
+ * @author Odoyinda
+ * @author Ggorgi
+ * @author Mawad
+ * @author Aajamiba
+ */
 public class Line_Our extends Shape {
    int startX, startY, endX, endY, Border_Thickness, Red, Green, Blue ;
     Effect eff1;

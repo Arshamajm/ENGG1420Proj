@@ -5,7 +5,10 @@
 
 /**
  *
- * @author minaawad
+ * @author Odoyinda
+ * @author Ggorgi
+ * @author Mawad
+ * @author Aajamiba
  */
 public class Effects {
 
@@ -14,6 +17,9 @@ public class Effects {
     private int Jumpstart;
     private int Changecolor;
 
+    /*
+    *@return Hide start
+    */
     public int getHideStart() {
         return HideStart;
     }
@@ -22,6 +28,9 @@ public class Effects {
         this.HideStart = HideStart;
     }
 
+    /*
+    *@return Show start
+    */
     public int getShowStart() {
         return ShowStart;
     }
@@ -30,6 +39,9 @@ public class Effects {
         this.ShowStart = ShowStart;
     }
 
+    /*
+    *@return Jump start
+    */
     public int getJumpstart() {
         return Jumpstart;
     }
@@ -38,6 +50,9 @@ public class Effects {
         this.Jumpstart = Jumpstart;
     }
 
+    /*
+    *@return change color
+    */
     public int getChangecolor() {
         return Changecolor;
     }

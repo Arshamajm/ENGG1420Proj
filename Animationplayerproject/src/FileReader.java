@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 /**
  *
- * @author Doyin
+ * @author Odoyinda
+ * @author Ggorgi
+ * @author Mawad
+ * @author Aajamiba
+ * @since 2022-03-27
  */
 public class FileReader {
      int f;
@@ -108,11 +108,7 @@ public class FileReader {
                         System.out.println("Color: " + red + " " + green + " " + blue);
                         circle.add(new Circle_our(r, x, y, red, blue, green));
                         ccnt++;
-                        /*
-                  *add effects part
-                  *
-                  *
-                         */
+                        
                         //read show and hide
                         for(int i=1;i<3;i++){
                    String nxtLine=sc.nextLine();
@@ -250,11 +246,7 @@ public class FileReader {
                         System.out.println("border: " + border);
                         rectangle.add(new Rectangle_our(length, width, x, y, border));
                         rcnt++;
-                        /*
-                    *add effects part
-                    *
-                    *
-                         */
+                      
                         for(int i=1;i<=2;i++){
                    String nxtLine=sc.nextLine();
          if(nxtLine.contains("effect")){
@@ -514,14 +506,14 @@ public class FileReader {
                             count += 1;
                         }
 
-                    } catch (NoSuchElementException a) {
+                    } catch (NoSuchElementException a) { //if it reads an extra line with nothing then it closes the file and breaks the loop
                         sc.close();
                         break;
                     }
                 }
             }
             sc.close();
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) { //if there is an error
             System.out.println("An error occurred.");
 
         }

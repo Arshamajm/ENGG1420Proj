@@ -6,14 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 /**
  *
- * @author minaawad
+ * @author Odoyinda
+ * @author Ggorgi
+ * @author Mawad
+ * @author Aajamiba
  */
 public class ChangeColor extends Effects{
     

@@ -5,7 +5,10 @@
 
 /**
  *
- * @author minaawad
+ * @author Odoyinda
+ * @author Ggorgi
+ * @author Mawad
+ * @author Aajamiba
  */
 public class Effect {
 String type;
@@ -27,6 +30,9 @@ int yJump;
         this.yJump = yJump;
     }
 
+    /*
+    *@return type
+    */
     public String getType() {
         return type;
     }
@@ -35,6 +41,9 @@ int yJump;
         this.type = type;
     }
 
+    /*
+    *@return start
+    */
     public int getStart() {
         return start;
     }
