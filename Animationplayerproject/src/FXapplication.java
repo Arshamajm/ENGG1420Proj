@@ -1,6 +1,7 @@
 
 import com.sun.javafx.tk.Toolkit;
 import java.sql.Time;
+import java.util.Random;
 import javax.swing.*;
 
 import javafx.animation.KeyFrame;
@@ -46,7 +47,7 @@ Pane root;
          root = new Pane();
         Timeline timer = new Timeline();
          // makes new filereader class//
-        m.readfile("input.txt"); // reads file //
+        m.readfile("shapes.txt"); // reads file //
         
 
         ///Creating Java Rectangle Array
@@ -63,6 +64,7 @@ Pane root;
        circle = new Circle[m.circle.size()];
         for (int i = 0; i < m.circle.size(); i++) { //creating the rectangles in the java rectangle
             circle[i] = new Circle(m.circle.get(i).x, m.circle.get(i).y, m.circle.get(i).r);
+            circle[i].setFill(Color.rgb(m.circle.get(i).getRed(),m.circle.get(i).getGreen(),m.circle.get(i).getBlue()));
         }
 
         //Creating Java Line Array
@@ -111,12 +113,23 @@ Pane root;
             frame++;
             
             System.out.println("frame number: "+frame);
-            if(frame == m.rectangle.get(0).startshow){
-                root.getChildren().add(rectt[0]);   
+            if(frame == m.rectangle.get(0).eff1.start){
+                root.getChildren().add(rectt[0]); 
+            }
+            if(frame == m.rectangle.get(0).eff2.start){
+    rectt[0].setX(rectt[0].getX()+m.rectangle.get(0).eff2.getxJump());
+    rectt[0].setY(rectt[0].getY()+m.rectangle.get(0).eff2.getyJump());
             };
-            if(frame == m.rectangle.get(0).startjump){
-               // rectt[0].
+                        if(frame == m.circle.get(0).eff1.start){
+                root.getChildren().add(circle[0]); 
+            }
+            if(frame ==m.circle.get(0).eff2.start){
+                root.getChildren().remove(circle[0]); 
             };
+            if(frame==50){
+            Random r=new Random();
+            rectt[0].setFill(Color.rgb(r.nextInt(255),r.nextInt(255),r.nextInt(255)));
+            }
             
          
             
@@ -125,7 +138,7 @@ Pane root;
                 System.exit(0);
             }
             try {
-                Thread.sleep(950 / FPS);
+                Thread.sleep(1000/ FPS);
             } catch (Exception e) {
                 System.out.println(e);
             }
