@@ -35,9 +35,9 @@ public class FileReader {
      int yjump;
      int startshow;
      int starthide;
-    ArrayList<Circle> circle = new ArrayList();
+    ArrayList<Circle_our> circle = new ArrayList();
         ArrayList<Rectangle_our> rectangle = new ArrayList();
-        ArrayList<Line> line = new ArrayList();
+        ArrayList<Line_Our> line = new ArrayList();
         // Everything before was initialized inside the file so it could not be accessed outside of it thats why I did this//
 
     public void loadAnimationFromFile(String a) {
@@ -126,7 +126,7 @@ public class FileReader {
                             starthide = Integer.parseInt(START2[1]); //start of circle hide
                             System.out.println("Start hide: " + starthide);
                         }
-                        circle.add(new Circle(r, x, y, red, blue, green));
+                        circle.add(new Circle_our(r, x, y, red, blue, green));
 
                     } else if (object.contains("Rect")) {
                         System.out.println("Rectangle");
@@ -232,7 +232,7 @@ public class FileReader {
                         System.out.println("Border: " + Border_Thickness);
 
                         //ArrayList for Line, everytime there is a new line element it will add it to the arraylist
-                        line.add(new Line(startX, startY, end_X, end_y, red, green, blue, Border_Thickness));
+                        line.add(new Line_Our(startX, startY, end_X, end_y, red, green, blue, Border_Thickness));
 
                     }
                     try {

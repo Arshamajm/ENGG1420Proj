@@ -10,7 +10,7 @@ import java.awt.Color;
  *
  * @author minaawad
  */
-public class Circle extends Shape{
+public class Circle_our extends Shape{
     
  int r; //we might need to make variables final to use animation timer
  int x;
@@ -19,7 +19,7 @@ public class Circle extends Shape{
  int blue;
  int green;
 
-    Circle(int r, int x, int y, int red, int blue, int green) {
+    Circle_our(int r, int x, int y, int red, int blue, int green) {
         this.r = r;
         this.x = x;
         this.y = y;

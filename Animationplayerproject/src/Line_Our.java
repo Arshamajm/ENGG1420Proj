@@ -10,12 +10,12 @@ import java.awt.Color;
  *
  * @author minaawad
  */ //bruhf
-public class Line extends Shape {
+public class Line_Our extends Shape {
    int startX, startY, endX, endY, Border_Thickness, Red, Green, Blue ;
 
     //constructor for line
 
-    public Line(int startX, int startY, int endX, int endY, int Red, int Green, int Blue, int Border_Thickness) {
+    public Line_Our(int startX, int startY, int endX, int endY, int Red, int Green, int Blue, int Border_Thickness) {
         this.startX = startX;
         this.startY = startY;
         this.endX = endX;
@@ -52,7 +52,7 @@ public class Line extends Shape {
     //colors are R, G, B 
     //don't know if it should be in String 
     
-    Line()
+    Line_Our()
     {
         
     }
