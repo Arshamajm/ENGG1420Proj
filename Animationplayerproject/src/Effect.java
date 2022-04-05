@@ -68,4 +68,27 @@ int yJump;
         this.yJump = yJump;
     }
 
+    public int getStart() {
+        return start;
+    }
+
+    public void setStart(int start) {
+        this.start = start;
+    }
+
+    public int getxJump() {
+        return xJump;
+    }
+
+    public void setxJump(int xJump) {
+        this.xJump = xJump;
+    }
+
+    public int getyJump() {
+        return yJump;
+    }
+
+    public void setyJump(int yJump) {
+        this.yJump = yJump;
+    }
 }
