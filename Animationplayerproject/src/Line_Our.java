@@ -12,6 +12,8 @@ import java.awt.Color;
  */ //bruhf
 public class Line_Our extends Shape {
    int startX, startY, endX, endY, Border_Thickness, Red, Green, Blue ;
+    Effect eff1;
+ Effect eff2;
 
     //constructor for line
 
@@ -24,20 +26,6 @@ public class Line_Our extends Shape {
         this.Red = Red;
         this.Green = Green;
         this.Blue = Blue;
-    }
-    
-    public Line_Our(int startX, int startY, int endX, int endY, int Red, int Green, int Blue, int Border_Thickness, int startjump, int startshow,int starthide) {
-        this.startX = startX;
-        this.startY = startY;
-        this.endX = endX;
-        this.endY = endY;
-        this.Border_Thickness = Border_Thickness;
-        this.Red = Red;
-        this.Green = Green;
-        this.Blue = Blue;
-        this.starthide = starthide;
-        this.startjump = startjump;
-        this.startshow = startshow;
     }
 
     
@@ -60,6 +48,14 @@ public class Line_Our extends Shape {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public void setEff1(Effect eff1) {
+        this.eff1 = eff1;
+    }
+
+    public void setEff2(Effect eff2) {
+        this.eff2 = eff2;
     }
     
     

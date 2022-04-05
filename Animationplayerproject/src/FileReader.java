@@ -35,6 +35,10 @@ public class FileReader {
      int yjump;
      int startshow;
      int starthide;
+     int startchange;
+     int lcnt=0;
+     int ccnt=0;
+     int rcnt=0;
     ArrayList<Circle_our> circle = new ArrayList();
         ArrayList<Rectangle_our> rectangle = new ArrayList();
         ArrayList<Line_Our> line = new ArrayList();
@@ -44,10 +48,10 @@ public class FileReader {
 
     } 
 
-    public void readfile()  
+    public void readfile(String fileName)  
            {
         try {
-            File myObj = new File("shapes.txt");
+            File myObj = new File(fileName);
             Scanner sc = new Scanner(myObj);
 
             //number of frames
@@ -100,34 +104,121 @@ public class FileReader {
                          green = Integer.parseInt(COLOR2[2]);
                          blue = Integer.parseInt(COLOR2[3]);
                         System.out.println("Color: " + red + " " + green + " " + blue);
+                        circle.add(new Circle_our(r, x, y, red, blue, green));
+                        ccnt++;
                         /*
                   *add effects part
                   *
                   *
                          */
                         //read show and hide
-                        String show = sc.nextLine();  //reads show
-
-                        if (show.contains("Show")) {
+                        for(int i=1;i<3;i++){
+                   String nxtLine=sc.nextLine();
+         if(nxtLine.contains("effect")){
+                        String name = sc.nextLine();  //reads show
+                        if(name.contains("Show")){
                             String s = sc.nextLine();
                             String[] START = s.split(" ");
                             startshow = Integer.parseInt(START[1]); //start of circle show
                             System.out.println("Start show: " + startshow);
-                            /*
-                      *add effects part
-                      *
-                      *
-                             */
+                            if(i==1)
+                            circle.get(ccnt-1).setEff1(new Effect("Show",startshow));
+                            else if(i==2)
+                            circle.get(ccnt-1).setEff2(new Effect("Show",startshow));    
+
                         }
-                        String hide = sc.nextLine();
-                        if (hide.contains("Hide")) {
+                        else if(name.contains("Hide")){
                             String s2 = sc.nextLine();
                             String[] START2 = s2.split(" ");
                             starthide = Integer.parseInt(START2[1]); //start of circle hide
                             System.out.println("Start hide: " + starthide);
+                            if(i==1)
+                            circle.get(ccnt-1).setEff1(new Effect("Hide",starthide));
+                            else if(i==2)
+                            circle.get(ccnt-1).setEff2(new Effect("Hide",starthide));
                         }
-                        circle.add(new Circle_our(r, x, y, red, blue, green,startjump,startshow,starthide));
-
+                        else if(name.contains("Jump")){
+                        String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            startjump = Integer.parseInt(START2[1]);
+                            System.out.println("Start jump: " + startjump);//start of jump of rect
+                            //x-axis
+                            String x_ = sc.nextLine();
+                            String[] X_ = x_.split("\\s");
+                            xjump = Integer.parseInt(X_[1]);     //x-axis for jump rect
+                            System.out.println("x: " + xjump);
+                            //y-axis
+                            String y_ = sc.nextLine();
+                            String[] Y_ = y_.split("\\s");
+                            yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
+                            System.out.println("y: " + yjump);
+                            if(i==1)
+                            circle.get(ccnt-1).setEff1(new Effect("Jump",startjump,xjump,yjump));
+                            else if(i==2)
+                            circle.get(ccnt-1).setEff2(new Effect("Jump",startjump,xjump,yjump));
+                        }
+                        else if(name.contains("Change")){
+                        String s2 = sc.nextLine();
+                        String[] START2 = s2.split(" ");
+                        startchange = Integer.parseInt(START2[1]); //start of circle hide
+                        System.out.println("Start hide: " + startchange);
+                        if(i==1)
+                        circle.get(ccnt-1).setEff1(new Effect("Hide",starthide));
+                        else if(i==2)
+                        circle.get(ccnt-1).setEff2(new Effect("Hide",starthide));
+                        }
+                        }
+         else if(nxtLine.contains("Show")){
+             String s = sc.nextLine();
+                            String[] START = s.split(" ");
+                            startshow = Integer.parseInt(START[1]); //start of circle show
+                            System.out.println("Start show: " + startshow);
+                            if(i==1)
+                            circle.get(ccnt-1).setEff1(new Effect("Show",startshow));
+                            else if(i==2)
+                            circle.get(ccnt-1).setEff2(new Effect("Show",startshow));
+         }
+         else if(nxtLine.contains("Hide")){
+                                         String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            starthide = Integer.parseInt(START2[1]); //start of circle hide
+                            System.out.println("Start hide: " + starthide);
+                            if(i==1)
+                            circle.get(ccnt-1).setEff1(new Effect("Hide",starthide));
+                            else if(i==2)
+                            circle.get(ccnt-1).setEff2(new Effect("Hide",starthide));
+         }
+         else if(nxtLine.contains("Jump")){
+             String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            startjump = Integer.parseInt(START2[1]);
+                            System.out.println("Start jump: " + startjump);//start of jump of rect
+                            //x-axis
+                            String x_ = sc.nextLine();
+                            String[] X_ = x_.split("\\s");
+                            xjump = Integer.parseInt(X_[1]);     //x-axis for jump rect
+                            System.out.println("x: " + xjump);
+                            //y-axis
+                            String y_ = sc.nextLine();
+                            String[] Y_ = y_.split("\\s");
+                            yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
+                            System.out.println("y: " + yjump);
+                            if(i==1)
+                            circle.get(ccnt-1).setEff1(new Effect("Jump",startjump,xjump,yjump));
+                            else if(i==2)
+                            circle.get(ccnt-1).setEff2(new Effect("Jump",startjump,xjump,yjump));
+         }
+                        else if(nxtLine.contains("Change")){
+                            String s2 = sc.nextLine();
+                        String[] START2 = s2.split(" ");
+                        startchange = Integer.parseInt(START2[1]); //start of circle hide
+                        System.out.println("Start hide: " + startchange);
+                        if(i==1)
+                        circle.get(ccnt-1).setEff1(new Effect("Hide",starthide));
+                        else if(i==2)
+                        circle.get(ccnt-1).setEff2(new Effect("Hide",starthide));
+                        }
+                        }
                     } else if (object.contains("Rect")) {
                         System.out.println("Rectangle");
                         //length
@@ -155,28 +246,40 @@ public class FileReader {
                         String[] BORDER = b.split("\\s");
                         border = Integer.parseInt(BORDER[1]);//border of rect
                         System.out.println("border: " + border);
-
+                        rectangle.add(new Rectangle_our(length, width, x, y, border));
+                        rcnt++;
                         /*
                     *add effects part
                     *
                     *
                          */
-                        String show = sc.nextLine();
-                        if (show.contains("Show")) {
+                        for(int i=1;i<=2;i++){
+                   String nxtLine=sc.nextLine();
+         if(nxtLine.contains("effect")){
+                        String name = sc.nextLine();  //reads show
+                        if(name.contains("Show")){
                             String s = sc.nextLine();
                             String[] START = s.split(" ");
-                            startshow = Integer.parseInt(START[1]); //show of rect
+                            startshow = Integer.parseInt(START[1]); //start of circle show
                             System.out.println("Start show: " + startshow);
+                            if(i==1)
+                            rectangle.get(rcnt-1).setEff1(new Effect("Show",startshow));
+                            else if(i==2)
+                            rectangle.get(rcnt-1).setEff2(new Effect("Show",startshow));    
 
-                            /*
-                         *add effects part
-                         * should pass startshow and starthide in it
-                         *
-                             */
                         }
-                        String jump = sc.nextLine();
-                        if (jump.contains("Jump")) {
+                        else if(name.contains("Hide")){
                             String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            starthide = Integer.parseInt(START2[1]); //start of circle hide
+                            System.out.println("Start hide: " + starthide);
+                            if(i==1)
+                            rectangle.get(rcnt-1).setEff1(new Effect("Hide",starthide));
+                            else if(i==2)
+                            rectangle.get(rcnt-1).setEff2(new Effect("Hide",starthide));
+                        }
+                        else if(name.contains("Jump")){
+                        String s2 = sc.nextLine();
                             String[] START2 = s2.split(" ");
                             startjump = Integer.parseInt(START2[1]);
                             System.out.println("Start jump: " + startjump);//start of jump of rect
@@ -190,10 +293,75 @@ public class FileReader {
                             String[] Y_ = y_.split("\\s");
                             yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
                             System.out.println("y: " + yjump);
+                            if(i==1)
+                            rectangle.get(rcnt-1).setEff1(new Effect("Jump",startjump,xjump,yjump));
+                            else if(i==2)
+                            rectangle.get(rcnt-1).setEff2(new Effect("Jump",startjump,xjump,yjump));
+                        }
+                        else if(name.contains("Change")){
+                        String s2 = sc.nextLine();
+                        String[] START2 = s2.split(" ");
+                        startchange = Integer.parseInt(START2[1]); //start of circle hide
+                        System.out.println("Start hide: " + startchange);
+                        if(i==1)
+                        rectangle.get(rcnt-1).setEff1(new Effect("Hide",starthide));
+                        else if(i==2)
+                        rectangle.get(rcnt-1).setEff2(new Effect("Hide",starthide));
+                        }
+                        }
+         else if(nxtLine.contains("Show")){
+             String s = sc.nextLine();
+                            String[] START = s.split(" ");
+                            startshow = Integer.parseInt(START[1]); //start of circle show
+                            System.out.println("Start show: " + startshow);
+                            if(i==1)
+                            rectangle.get(rcnt-1).setEff1(new Effect("Show",startshow));
+                            else if(i==2)
+                            rectangle.get(rcnt-1).setEff2(new Effect("Show",startshow));
+         }
+         else if(nxtLine.contains("Hide")){
+                                         String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            starthide = Integer.parseInt(START2[1]); //start of circle hide
+                            System.out.println("Start hide: " + starthide);
+                            if(i==1)
+                            rectangle.get(rcnt-1).setEff1(new Effect("Hide",starthide));
+                            else if(i==2)
+                            rectangle.get(rcnt-1).setEff2(new Effect("Hide",starthide));
+         }
+         else if(nxtLine.contains("Jump")){
+             String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            startjump = Integer.parseInt(START2[1]);
+                            System.out.println("Start jump: " + startjump);//start of jump of rect
+                            //x-axis
+                            String x_ = sc.nextLine();
+                            String[] X_ = x_.split("\\s");
+                            xjump = Integer.parseInt(X_[1]);     //x-axis for jump rect
+                            System.out.println("x: " + xjump);
+                            //y-axis
+                            String y_ = sc.nextLine();
+                            String[] Y_ = y_.split("\\s");
+                            yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
+                            System.out.println("y: " + yjump);
+                            if(i==1)
+                            rectangle.get(rcnt-1).setEff1(new Effect("Jump",startjump,xjump,yjump));
+                            else if(i==2)
+                            rectangle.get(rcnt-1).setEff2(new Effect("Jump",startjump,xjump,yjump));
+         }
+                        else if(nxtLine.contains("Change")){
+                            String s2 = sc.nextLine();
+                        String[] START2 = s2.split(" ");
+                        startchange = Integer.parseInt(START2[1]); //start of circle hide
+                        System.out.println("Start hide: " + startchange);
+                        if(i==1)
+                        rectangle.get(rcnt-1).setEff1(new Effect("Hide",starthide));
+                        else if(i==2)
+                        rectangle.get(rcnt-1).setEff2(new Effect("Hide",starthide));
+                        }
                         }
                         //Rectangle arraylist
 
-                        rectangle.add(new Rectangle_our(length, width, x, y, border,startjump,startshow,starthide));
 
                     } else if (object.contains("Line")) { //Each line has a starting point (including startX and startY) and an end point (including endX and endY), color, and border thickness (border).
                         System.out.println("Line:");
@@ -201,7 +369,7 @@ public class FileReader {
                         String readstartx = sc.nextLine();
                         String[] readstartxsplit = readstartx.split(" ");
                         startX = Integer.parseInt(readstartxsplit[1]);
-                        System.out.println("Start jump: " + startX);
+                        System.out.println("StartX: " + startX);
                         //starting y
                         String readstarty = sc.nextLine();
                         String[] readstartysplit = readstarty.split(" ");
@@ -225,15 +393,118 @@ public class FileReader {
                         green = Integer.parseInt(COLOR2[2]);
                         blue = Integer.parseInt(COLOR2[3]);
                         System.out.println("Color: " + red + " " + green + " " + blue);
-                        //border thickness
-                        String read_border_thickness = sc.nextLine();
-                        String[] read_border_thickness_split = read_border_thickness.split(" ");
-                        Border_Thickness = Integer.parseInt(read_border_thickness_split[1]);
-                        System.out.println("Border: " + Border_Thickness);
 
                         //ArrayList for Line, everytime there is a new line element it will add it to the arraylist
                         line.add(new Line_Our(startX, startY, end_X, end_y, red, green, blue, Border_Thickness));
+                        lcnt++;
+//Effects part:
+                        for(int i=1;i<=2;i++){
+                   String nxtLine=sc.nextLine();
+         if(nxtLine.contains("effect")){
+                        String name = sc.nextLine();  //reads show
+                        if(name.contains("Show")){
+                            String s = sc.nextLine();
+                            String[] START = s.split(" ");
+                            startshow = Integer.parseInt(START[1]); //start of circle show
+                            System.out.println("Start show: " + startshow);
+                            if(i==1)
+                            line.get(lcnt-1).setEff1(new Effect("Show",startshow));
+                            else if(i==2)
+                            line.get(lcnt-1).setEff2(new Effect("Show",startshow));    
 
+                        }
+                        else if(name.contains("Hide")){
+                            String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            starthide = Integer.parseInt(START2[1]); //start of circle hide
+                            System.out.println("Start hide: " + starthide);
+                            if(i==1)
+                            line.get(lcnt-1).setEff1(new Effect("Hide",starthide));
+                            else if(i==2)
+                            line.get(lcnt-1).setEff2(new Effect("Hide",starthide));
+                        }
+                        else if(name.contains("Jump")){
+                        String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            startjump = Integer.parseInt(START2[1]);
+                            System.out.println("Start jump: " + startjump);//start of jump of rect
+                            //x-axis
+                            String x_ = sc.nextLine();
+                            String[] X_ = x_.split("\\s");
+                            xjump = Integer.parseInt(X_[1]);     //x-axis for jump rect
+                            System.out.println("x: " + xjump);
+                            //y-axis
+                            String y_ = sc.nextLine();
+                            String[] Y_ = y_.split("\\s");
+                            yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
+                            System.out.println("y: " + yjump);
+                            if(i==1)
+                            line.get(lcnt-1).setEff1(new Effect("Jump",startjump,xjump,yjump));
+                            else if(i==2)
+                            line.get(lcnt-1).setEff2(new Effect("Jump",startjump,xjump,yjump));
+                        }
+                        else if(name.contains("Change")){
+                        String s2 = sc.nextLine();
+                        String[] START2 = s2.split(" ");
+                        startchange = Integer.parseInt(START2[1]); //start of circle hide
+                        System.out.println("Start hide: " + startchange);
+                        if(i==1)
+                        line.get(lcnt-1).setEff1(new Effect("Hide",starthide));
+                        else if(i==2)
+                        line.get(lcnt-1).setEff2(new Effect("Hide",starthide));
+                        }
+                        }
+         else if(nxtLine.contains("Show")){
+             String s = sc.nextLine();
+                            String[] START = s.split(" ");
+                            startshow = Integer.parseInt(START[1]); //start of circle show
+                            System.out.println("Start show: " + startshow);
+                            if(i==1)
+                            line.get(lcnt-1).setEff1(new Effect("Show",startshow));
+                            else if(i==2)
+                            line.get(lcnt-1).setEff2(new Effect("Show",startshow));
+         }
+         else if(nxtLine.contains("Hide")){
+                                         String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            starthide = Integer.parseInt(START2[1]); //start of circle hide
+                            System.out.println("Start hide: " + starthide);
+                            if(i==1)
+                            line.get(lcnt-1).setEff1(new Effect("Hide",starthide));
+                            else if(i==2)
+                            line.get(lcnt-1).setEff2(new Effect("Hide",starthide));
+         }
+         else if(nxtLine.contains("Jump")){
+             String s2 = sc.nextLine();
+                            String[] START2 = s2.split(" ");
+                            startjump = Integer.parseInt(START2[1]);
+                            System.out.println("Start jump: " + startjump);//start of jump of rect
+                            //x-axis
+                            String x_ = sc.nextLine();
+                            String[] X_ = x_.split("\\s");
+                            xjump = Integer.parseInt(X_[1]);     //x-axis for jump rect
+                            System.out.println("x: " + xjump);
+                            //y-axis
+                            String y_ = sc.nextLine();
+                            String[] Y_ = y_.split("\\s");
+                            yjump = Integer.parseInt(Y_[1]);     //y-axis for jump rect
+                            System.out.println("y: " + yjump);
+                            if(i==1)
+                            line.get(lcnt-1).setEff1(new Effect("Jump",startjump,xjump,yjump));
+                            else if(i==2)
+                            line.get(lcnt-1).setEff2(new Effect("Jump",startjump,xjump,yjump));
+         }
+                        else if(nxtLine.contains("Change")){
+                            String s2 = sc.nextLine();
+                        String[] START2 = s2.split(" ");
+                        startchange = Integer.parseInt(START2[1]); //start of circle hide
+                        System.out.println("Start hide: " + startchange);
+                        if(i==1)
+                        line.get(lcnt-1).setEff1(new Effect("Hide",starthide));
+                        else if(i==2)
+                        line.get(lcnt-1).setEff2(new Effect("Hide",starthide));
+                        }
+                        }
                     }
                     try {
                         String empty5 = sc.nextLine();

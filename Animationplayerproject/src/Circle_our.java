@@ -18,6 +18,8 @@ public class Circle_our extends Shape{
  int red;
  int blue;
  int green;
+ Effect eff1;
+ Effect eff2;
 
     Circle_our(int r, int x, int y, int red, int blue, int green) {
         this.r = r;
@@ -27,18 +29,6 @@ public class Circle_our extends Shape{
         this.green = green;
         this.blue = blue;
     }
-    Circle_our(int r, int x, int y, int red, int blue, int green, int startjump, int startshow,int starthide){
-        this.r = r;
-        this.x = x;
-        this.y = y;
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
-        this.starthide = starthide;
-        this.startjump = startjump;
-        this.startshow = startshow;
-    }
-    
 
     public int getX() {
         return x;
@@ -108,4 +98,12 @@ public class Circle_our extends Shape{
         
     }
     */
+
+    public void setEff1(Effect eff1) {
+        this.eff1 = eff1;
+    }
+
+    public void setEff2(Effect eff2) {
+        this.eff2 = eff2;
+    }
 }
