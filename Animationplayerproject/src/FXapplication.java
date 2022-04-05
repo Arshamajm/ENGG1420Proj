@@ -26,6 +26,7 @@ import javafx.animation.AnimationTimer;
  * @author Mawad
  * @author Aajamiba
  */
+
 public class FXapplication extends Application {
 
     public Rectangle[] rectt;
