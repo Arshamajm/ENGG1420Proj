@@ -25,6 +25,7 @@ public class Circle extends Shape{
         this.green = green;
         this.blue = blue;
     }
+    
     /*
     *@return x
     */
@@ -35,7 +36,6 @@ public class Circle extends Shape{
     public void setX(int x) {
         this.x = x;
     }
-
     /*
     *@return y
     */
@@ -46,6 +46,7 @@ public class Circle extends Shape{
     public void setY(int y) {
         this.y = y;
     }
+    
     /*
     *@return red
     */
@@ -56,7 +57,6 @@ public class Circle extends Shape{
     public void setRed(int red) {
         this.red = red;
     }
-
     /*
     *@return blue
     */
@@ -67,7 +67,6 @@ public class Circle extends Shape{
     public void setBlue(int blue) {
         this.blue = blue;
     }
-
     /*
     *@return green
     */
@@ -80,31 +79,5 @@ public class Circle extends Shape{
     }
 
     
-    
-            //////* I don't think we need any of the below*///////
-    /*
-    public void setR(int r) {
-        this.r = r;
-    }
-
-    public void setColour(int red, int green, int blue){
-        this.colour = new Color(red, green, blue);
-    }
-
-    //I don't think we need this; just make it a black border
-    public void setBorderColor(int r, int g, int b) {
-        this.borderColor = new Color(r,g,b);
-    }
-
-    public void setBorderthickness(double borderthickness) {
-        this.borderthickness = borderthickness;
-    }
    
-   
-    
-    public void Circle(){
-        
-        
-    }
-    */
 }
