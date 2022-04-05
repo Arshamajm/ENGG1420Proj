@@ -62,7 +62,7 @@ Pane root;
        System.out.println("The size of the arraylist of rectangle is: " + m.rectangle.size());
        circle = new Circle[m.circle.size()];
         for (int i = 0; i < m.circle.size(); i++) { //creating the rectangles in the java rectangle
-            circle[i] = new Circle(m.circle.get(i).x, m.circle.get(i).y, m.circle.get(i).r);
+            circle[i] = new Circle(m.circle.get(i).x, m.circle.get(i).y, m.circle.get(i).r,Color.rgb(m.circle.get(i).red,m.circle.get(i).green,m.circle.get(i).blue));
         }
 
         //Creating Java Line Array
@@ -106,16 +106,26 @@ Pane root;
         int frame =0; // Current frame
         int frames = m.f; // Max frames
         int FPS = m.FPS;// FPS
+        Effects E = new Effects();
 
         public void handle(long now){
             frame++;
             
             System.out.println("frame number: "+frame);
+            if(frame == m.circle.get(0).startshow){
+                root.getChildren().add(circle[0]);   
+            };
+            if(frame == m.rectangle.get(0).starthide){
+                root.getChildren().remove(circle[0]);
+            };
+            
             if(frame == m.rectangle.get(0).startshow){
                 root.getChildren().add(rectt[0]);   
             };
             if(frame == m.rectangle.get(0).startjump){
-                rectt[0].
+                rectt[0].setTranslateY(E.yJump());
+                rectt[0].setTranslateX(E.xJump());
+                
             };
             
          

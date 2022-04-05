@@ -3,14 +3,14 @@ speed: 10 fps
 4
 
 Circle
-r: 10
-x: 50
-y: 50
+r: 60
+x: 100
+y: 100
 color: 255, 0, 0
 Show
 Start: 10
 Hide
-Hide: 120
+Hide: 30
 
 Rect
 Length: 100
@@ -19,7 +19,7 @@ x: 25
 Y: 25
 Border: 5
 Show
-Start: 10
+Start: 35
 Jump
 Start: 50
 X: 30

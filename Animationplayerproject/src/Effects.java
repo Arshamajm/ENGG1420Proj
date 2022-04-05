@@ -7,65 +7,42 @@
  *
  * @author minaawad
  */
+import java.awt.Paint;
+import javafx.scene.paint.Color;
 public class Effects {
 
     private int HideStart;
     private int ShowStart;
     private int Jumpstart;
     private int Changecolor;
-
-    public int getHideStart() {
-        return HideStart;
-    }
-
-    public void setHideStart(int HideStart) {
-        this.HideStart = HideStart;
-    }
-
-    public int getShowStart() {
-        return ShowStart;
-    }
-
-    public void setShowStart(int ShowStart) {
-        this.ShowStart = ShowStart;
-    }
-
-    public int getJumpstart() {
-        return Jumpstart;
-    }
-
-    public void setJumpstart(int Jumpstart) {
-        this.Jumpstart = Jumpstart;
-    }
-
-    public int getChangecolor() {
-        return Changecolor;
-    }
-
-    public void setChangecolor(int Changecolor) {
-        this.Changecolor = Changecolor;
-    }
-
     //Hide method
     public void hide() {
 
     }
 
     //Show method
-    public void show() {
-
+    public void show(){
+        
     }
 
     //Jump method
-    public void Jump() {
-
+    public int yJump() {
+        int k = 60;
+                
+        return k;
+    }
+    
+    public int xJump() {
+        int k = 60;
+                
+        return k;
     }
 
     ///change colour method
-    public void ChangeColor(Shape a, int r, int g, int b) {
-        a.setColour(r, g, b);
-        
-    }
+//    public Paint ChangeColor() {
+//        Paint k = new Paint(124,9,9); 
+//        return k;
+//    }
 
     public void Effects() {
         //String found = frames.split(this.frames)[0];
