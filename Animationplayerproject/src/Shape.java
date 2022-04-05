@@ -28,6 +28,9 @@ public class Shape {
 int red = 0;
 int green = 0;
 int blue = 0;
+int startjump=0;
+     int startshow=0;
+     int starthide=0;
     
 }
 

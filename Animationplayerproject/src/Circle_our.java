@@ -27,6 +27,18 @@ public class Circle_our extends Shape{
         this.green = green;
         this.blue = blue;
     }
+    Circle_our(int r, int x, int y, int red, int blue, int green, int startjump, int startshow,int starthide){
+        this.r = r;
+        this.x = x;
+        this.y = y;
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+        this.starthide = starthide;
+        this.startjump = startjump;
+        this.startshow = startshow;
+    }
+    
 
     public int getX() {
         return x;

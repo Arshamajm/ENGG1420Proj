@@ -25,6 +25,20 @@ public class Line_Our extends Shape {
         this.Green = Green;
         this.Blue = Blue;
     }
+    
+    public Line_Our(int startX, int startY, int endX, int endY, int Red, int Green, int Blue, int Border_Thickness, int startjump, int startshow,int starthide) {
+        this.startX = startX;
+        this.startY = startY;
+        this.endX = endX;
+        this.endY = endY;
+        this.Border_Thickness = Border_Thickness;
+        this.Red = Red;
+        this.Green = Green;
+        this.Blue = Blue;
+        this.starthide = starthide;
+        this.startjump = startjump;
+        this.startshow = startshow;
+    }
 
     
     

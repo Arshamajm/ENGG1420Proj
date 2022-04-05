@@ -126,7 +126,7 @@ public class FileReader {
                             starthide = Integer.parseInt(START2[1]); //start of circle hide
                             System.out.println("Start hide: " + starthide);
                         }
-                        circle.add(new Circle_our(r, x, y, red, blue, green));
+                        circle.add(new Circle_our(r, x, y, red, blue, green,startjump,startshow,starthide));
 
                     } else if (object.contains("Rect")) {
                         System.out.println("Rectangle");
@@ -193,7 +193,7 @@ public class FileReader {
                         }
                         //Rectangle arraylist
 
-                        rectangle.add(new Rectangle_our(length, width, x, y, border));
+                        rectangle.add(new Rectangle_our(length, width, x, y, border,startjump,startshow,starthide));
 
                     } else if (object.contains("Line")) { //Each line has a starting point (including startX and startY) and an end point (including endX and endY), color, and border thickness (border).
                         System.out.println("Line:");

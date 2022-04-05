@@ -23,6 +23,16 @@ public class Rectangle_our extends Shape{
         setY(y);
         setBorderthickness(border);
     }
+    public Rectangle_our(int length, int width, int x, int y, int border, int startjump, int startshow,int starthide) {
+        setLength(length);
+        setWidth(width);
+        setX(x);
+        setY(y);
+        setBorderthickness(border);
+        this.starthide = starthide;
+        this.startjump = startjump;
+        this.startshow = startshow;
+    }
 
     public void setLength(int length) {
         this.length = length;

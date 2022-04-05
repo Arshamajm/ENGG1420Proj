@@ -19,7 +19,7 @@ x: 25
 Y: 25
 Border: 5
 Show
-Start: 15
+Start: 10
 Jump
 Start: 50
 X: 30
@@ -32,7 +32,7 @@ x: 50
 Y: 50
 Border: 3
 Show
-Start: 15
+Start: 5
 Jump
 Start: 50
 X: 30
