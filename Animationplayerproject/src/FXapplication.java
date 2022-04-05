@@ -46,7 +46,7 @@ Pane root;
          root = new Pane();
         Timeline timer = new Timeline();
          // makes new filereader class//
-        m.readfile(); // reads file //
+        m.readfile("input.txt"); // reads file //
         
 
         ///Creating Java Rectangle Array
@@ -115,7 +115,7 @@ Pane root;
                 root.getChildren().add(rectt[0]);   
             };
             if(frame == m.rectangle.get(0).startjump){
-                rectt[0].
+               // rectt[0].
             };
             
          

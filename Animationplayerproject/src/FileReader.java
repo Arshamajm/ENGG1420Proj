@@ -62,9 +62,11 @@ public class FileReader {
             System.out.println("Total frames: " + f);
 
             String fps = sc.nextLine();
-            String[] framespersecond = fps.split(" "); //splits string 
+            String FPS1 = fps.replaceAll("[^0-9]", " ");
+            String[] framespersecond = FPS1.split("\\s+"); //splits string 
              FPS = Integer.parseInt(framespersecond[1]); //converts String to number
             System.out.println("frames per second: " + FPS); //prints the number of fps
+            
 
              String elements = sc.nextLine();
              ELEMENTS = Integer.parseInt(elements);
